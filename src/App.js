@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Menu from './components/Menu/Menu';
 import routes from './routes';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <Router>
         <div>
           <Menu />
           <div className="container">
-            <div className="row">
-              {this.showContentMenus(routes)}
-            </div>
+            <div className="row">{this.showContentMenus(routes)}</div>
           </div>
         </div>
       </Router>
@@ -35,8 +33,7 @@ class App extends React.Component {
       });
     }
     return <Switch>{result}</Switch>;
-  }
-
+  };
 }
 
 export default App;
