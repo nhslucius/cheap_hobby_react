@@ -1,0 +1,71 @@
+.header {
+  width: 100%;
+  background-color: white;
+  height: 100px;
+  text-align: center;
+}
+
+.nav-element {
+  display: inline-block;
+}
+
+.logo {
+  height: 100%;
+  display: inline-block;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.wrap {
+  height: 100%;
+  width: 80%t;
+  align-items: center;
+}
+
+.wrap ul li {
+  display: inline-block;
+}
+
+.wrap ul .border-hover:hover {
+  border-bottom: 3px solid;
+  border-color: black;
+}
+
+.wrap ul {
+  height: 100%;
+  width: fit-content;
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+  height: 100%;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  line-height: 100px;
+  margin-right: 20px;
+  color: #111821;
+}
+
+.btn-search {
+  position: relative;
+  right: 20px;
+  color: #a9a9a9;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-search:hover {
+  color: #2199f9;
+}

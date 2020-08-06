@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-
+import './css/menu.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const menus = [
   {
-    name: "Trang chủ",
-    to: "/",
+    name: 'Trang chủ',
+    to: '/',
     exact: true
   },
   {
-    name: "Liên hệ",
-    to: "/lien-he",
+    name: 'Liên hệ',
+    to: '/lien-he',
     exact: true
   }
-]
+];
 
 const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
   return (
@@ -22,9 +24,7 @@ const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
       children={({ match }) => {
         return (
           <li className={match ? 'active-menu' : ''}>
-            <Link to={to}>
-              {label}
-            </Link>
+            <Link to={to}>{label}</Link>
           </li>
         );
       }}
@@ -35,10 +35,47 @@ const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
 class Menu extends Component {
   render() {
     return (
-      <div className="navbar navbar-default">
-        <ul className="nav navbar-nav">
-          {this.showMenus(menus)}
-        </ul>
+      <div className="header">
+        <div className="wrap">
+          <div className="logo">
+            <img src="./images/logo.png" alt="mo hinh gia re" />
+          </div>
+
+          <nav className="nav-element">
+            <ul>
+              <li>
+                <a className="border-hover" href="/">
+                  Trang chủ
+                </a>{' '}
+              </li>
+              <li>
+                <a className="border-hover" href="/">
+                  Fanpage
+                </a>{' '}
+              </li>
+              <li>
+                <a className="border-hover" href="/">
+                  shopee
+                </a>{' '}
+              </li>
+              <li>
+                <a className="border-hover" href="/">
+                  Liên hệ
+                </a>{' '}
+              </li>
+              <li>
+                <input
+                  className="search-input"
+                  name="search"
+                  placeholder="tim san pham"
+                />
+                <FontAwesomeIcon icon={faSearch} />
+              </li>
+            </ul>
+          </nav>
+
+          <div></div>
+        </div>
       </div>
     );
   }
@@ -58,8 +95,7 @@ class Menu extends Component {
       });
     }
     return result;
-  }
-
+  };
 }
 
 export default Menu;
